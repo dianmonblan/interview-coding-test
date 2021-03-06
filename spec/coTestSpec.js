@@ -7,31 +7,31 @@ describe('Co Test', function () {
   describe('Product', function () {
     it('the price of a product is never negative', function () {
       try {
-        new models.SpecialFullCoverageProduct('Special Full Coverage', 15, -10);
+        new models.SpecialFullCoverageProduct(15, -10);
       } catch (error) {
         expect(error.message).equal('the price of a product is never negative');
       }
 
-      expect(new models.FullCoverageProduct('Full Coverage', 15, 0).price).equal(0);
-      expect(new models.LowCoverageProduct('Low Coverage', 15, 10).price).equal(10);
+      expect(new models.FullCoverageProduct(15, 0).price).equal(0);
+      expect(new models.LowCoverageProduct(15, 10).price).equal(10);
     });
 
     it('the price of a product is never more than 50 except `Mega Coverage` as such its price is 80 and it never alters', function () {
       try {
-        new models.SpecialFullCoverageProduct('Special Full Coverage', 10, 51);
+        new models.SpecialFullCoverageProduct(10, 51);
       } catch (error) {
         expect(error.message).equal('the price of a product is never more than 50');
       }
 
-      expect(new models.FullCoverageProduct('Full Coverage', 2, 50).price).equal(50);
+      expect(new models.FullCoverageProduct(2, 50).price).equal(50);
 
       try {
-        new models.MediumCoverageProduct('Medium Coverage', 10, 79);
+        new models.MediumCoverageProduct(10, 79);
       } catch (error) {
         expect(error.message).equal('`Mega Coverage` as such its price is 80 and it never alters');
       }
 
-      expect(new models.MediumCoverageProduct('Medium Coverage', 2, 80).price).equal(80);
+      expect(new models.MediumCoverageProduct(2, 80).price).equal(80);
     });
   });
 

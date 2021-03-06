@@ -37,7 +37,7 @@ class ProductAbstract {
   }
 
   /**
-   * Represents a product.
+   * Represents a product
    * @constructor
    * @param {string} name
    * @param {number} sellIn

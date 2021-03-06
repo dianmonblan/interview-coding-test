@@ -1,7 +1,13 @@
+/**
+ * @class
+ * @classdesc Create new CarInsurance
+ * @summary Abstract class recommendation to avoid creating direct instances of the class example: `abstract class ProductAbstract {}`
+ */
 class CarInsurance {
   constructor(products = []) {
     this.products = products;
   }
+
   updatePrice() {
     for (var i = 0; i < this.products.length; i++) {
       if (this.products[i].name != 'Full Coverage' && this.products[i].name != 'Special Full Coverage') {

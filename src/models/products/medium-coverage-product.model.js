@@ -35,6 +35,16 @@ class MediumCoverageProduct extends ProductAbstract {
     }
 
     /**
+     * Represents a medium coverage product
+     * @constructor
+     * @param {number} sellIn
+     * @param {number} price
+     */
+    constructor(sellIn, price) {
+        super('Medium Coverage', sellIn, price);
+    }
+
+    /**
      * Validation price is 80 and it never alters
      * @function maximumPrice
      * @override
