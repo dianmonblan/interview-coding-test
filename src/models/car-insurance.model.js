@@ -1,15 +1,28 @@
+const { ProductAbstract } = require("./products");
+
 /**
  * @class
  * @classdesc Create new CarInsurance
  * @summary Abstract class recommendation to avoid creating direct instances of the class example: `abstract class ProductAbstract {}`
  */
 class CarInsurance {
+  /**
+   * Represents a car insurance
+   * @constructor
+   * @param {ProductAbstract[]} products
+   */
   constructor(products = []) {
     this.products = products;
   }
 
+  /**
+   * Update products price
+   * @function updatePrice
+   * @returns {ProductAbstract[]}
+   */
   updatePrice() {
     for (var i = 0; i < this.products.length; i++) {
+      // !['Full Coverage', 'Special Full Coverage'].includes(this.products[i].name)
       if (this.products[i].name != 'Full Coverage' && this.products[i].name != 'Special Full Coverage') {
         if (this.products[i].price > 0) {
           if (this.products[i].name != 'Mega Coverage') {

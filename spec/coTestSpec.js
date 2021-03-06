@@ -26,12 +26,12 @@ describe('Co Test', function () {
       expect(new models.FullCoverageProduct(2, 50).price).equal(50);
 
       try {
-        new models.MediumCoverageProduct(10, 79);
+        new models.MegaCoverageProduct(10, 79);
       } catch (error) {
         expect(error.message).equal('`Mega Coverage` as such its price is 80 and it never alters');
       }
 
-      expect(new models.MediumCoverageProduct(2, 80).price).equal(80);
+      expect(new models.MegaCoverageProduct(2, 80).price).equal(80);
     });
   });
 
