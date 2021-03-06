@@ -1,7 +1,7 @@
-const Product = require('./product.model');
+const products = require('./products');
 const CarInsurance = require('./car-insurance.model');
 
 module.exports = {
-    Product,
-    CarInsurance
+    CarInsurance,
+    ...products
 }
