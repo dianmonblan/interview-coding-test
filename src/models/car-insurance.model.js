@@ -1,4 +1,4 @@
-export class CarInsurance {
+class CarInsurance {
   constructor(products = []) {
     this.products = products;
   }
@@ -53,7 +53,4 @@ export class CarInsurance {
   }
 }
 
-module.exports = {
-  Product,
-  CarInsurance
-}
+module.exports = CarInsurance;
