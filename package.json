@@ -4,9 +4,8 @@
   "description": "ComparaOnline Software Engineer Test",
   "main": "index.js",
   "scripts": {
-    "test": "mocha spec/*.js",
+    "test": "nyc --reporter=lcov mocha spec/*.js && npm run view-coverage",
     "after-30-days": "node ./src/index",
-    "coverage": "nyc --reporter=lcov npm run test && npm run view-coverage",
     "view-coverage": "http-server coverage/lcov-report -o"
   },
   "repository": {
