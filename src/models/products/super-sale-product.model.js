@@ -14,7 +14,7 @@ class SuperSaleProduct extends ProductAbstract {
      */
     updatePrice() {
         if (this.price > 0)
-            this.price = this.price - 1;
+            this.price = this.price - 2;
 
         this.sellIn = this.sellIn - 1;
 
