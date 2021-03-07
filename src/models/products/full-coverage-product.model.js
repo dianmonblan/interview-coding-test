@@ -8,13 +8,18 @@ const ProductAbstract = require("./product-abstract.model");
  */
 class FullCoverageProduct extends ProductAbstract {
     /**
-     * Represents a full coverage product
-     * @constructor
-     * @param {number} sellIn
-     * @param {number} price
+     * Update price based on age
+     * @override
+     * @summary Simulate Abstract method: Implements Template Method(design pattern)
      */
-    constructor(sellIn, price) {
-        super('Full Coverage', sellIn, price);
+    updatePrice() {
+        if (this.price < ProductAbstract.maximumPrice)
+            this.price = this.price + 1;
+
+        this.sellIn = this.sellIn - 1;
+
+        if (this.sellIn < 0 && this.price < ProductAbstract.maximumPrice)
+            this.price = this.price + 1;
     }
 }
 

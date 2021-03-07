@@ -1,21 +1,7 @@
 /**
- * @constant MINIMAL_PRICE
- * @type {number}
- * @default
-*/
-const MINIMAL_PRICE = 0;
-
-/**
- * @constant MAXIMUM_PRICE
- * @type {number}
- * @default
-*/
-const MAXIMUM_PRICE = 50;
-
-/**
  * @class
  * @classdesc Product main
- * @summary Abstract class recommendation to avoid creating direct instances of the class example: `abstract class ProductAbstract {}`
+ * @summary Recommendation: Abstract class to avoid creating direct instances of the class. Example of declaration: `abstract class ProductAbstract {}`
  */
 class ProductAbstract {
   /**
@@ -37,6 +23,18 @@ class ProductAbstract {
   }
 
   /**
+   * @static
+   * @type {number}
+   */
+  static minimalPrice = 0;
+
+  /**
+   * @static
+   * @type {number}
+   */
+  static maximumPrice = 50;
+
+  /**
    * Represents a product
    * @constructor
    * @param {string} name
@@ -56,7 +54,7 @@ class ProductAbstract {
    * @param {number} price
    */
   minimalPrice(price) {
-    if (price < MINIMAL_PRICE)
+    if (price < ProductAbstract.minimalPrice)
       throw new Error('the price of a product is never negative');
   }
 
@@ -67,9 +65,17 @@ class ProductAbstract {
    * @param {number} price
    */
   maximumPrice(price) {
-    if (price > MAXIMUM_PRICE)
+    if (price > ProductAbstract.maximumPrice)
       throw new Error('the price of a product is never more than 50');
   }
+
+  /**
+   * Update price based on age. This method should be 
+   * implemented to its children class.
+   * @function updatePrice
+   * @summary Recommendation: Abstract method  that defines the skeleton of an algorithm implements Template Method(design pattern). Example of declaration: `abstract updatePrice()`
+   */
+  updatePrice() { }
 }
 
 module.exports = ProductAbstract;

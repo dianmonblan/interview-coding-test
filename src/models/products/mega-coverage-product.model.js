@@ -1,13 +1,6 @@
 const ProductAbstract = require("./product-abstract.model");
 
 /**
- * @constant MAXIMUM_PRICE
- * @type {number}
- * @default
-*/
-const MAXIMUM_PRICE = 80;
-
-/**
  * @class
  * @classdesc Create new MegaCoverageProduct
  * @summary
@@ -33,16 +26,12 @@ class MegaCoverageProduct extends ProductAbstract {
     get price() {
         return this._price;
     }
-    
+
     /**
-     * Represents a mega coverage product
-     * @constructor
-     * @param {number} sellIn
-     * @param {number} price
+     * @static
+     * @type {number}
      */
-    constructor(sellIn, price) {
-        super('Mega Coverage', sellIn, price);
-    }
+    static maximumPrice = 80;
 
     /**
      * Validation price is 80 and it never alters
@@ -51,9 +40,16 @@ class MegaCoverageProduct extends ProductAbstract {
      * @param {number} price
      */
     maximumPrice(price) {
-        if (price != MAXIMUM_PRICE)
+        if (price != MegaCoverageProduct.maximumPrice)
             throw new Error('`Mega Coverage` as such its price is 80 and it never alters');
     }
+
+    /**
+     * Update price based on age
+     * @override
+     * @summary Simulate Abstract method: Implements Template Method(design pattern)
+     */
+    updatePrice() { }
 }
 
 module.exports = MegaCoverageProduct;
