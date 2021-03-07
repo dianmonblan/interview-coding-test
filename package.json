@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha spec/*.js",
-    "after-30-days": "node ./src/index"
+    "after-30-days": "node ./src/index",
+    "coverage": "nyc --reporter=lcov npm run test && npm run view-coverage",
+    "view-coverage": "http-server coverage/lcov-report -o"
   },
   "repository": {
     "type": "git",
@@ -25,6 +27,8 @@
   "homepage": "https://github.com/comparaonline/test-software-engineer#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^4.0.1"
+    "http-server": "^0.12.3",
+    "mocha": "^4.0.1",
+    "nyc": "^15.1.0"
   }
 }
