@@ -78,11 +78,15 @@ for (let i = 1; i <= 30; i += 1) {
 
 # Upgrade
 
+- Required Node.js (>14), I provide a `Dockerfile` with all the required dependencies to run the required commands.
+
 ### Commands
 - `npm run test`, run the test suite and display the coverage report on browser window
 - `npm run after-30-days`, display an output similar to `products_after_30_days.txt`
 - `npm run view-coverage`, run the http server with the coverage report generated on browser window
-
+- `docker-compose up --build`, run container
+- `docker exec -ti interview-coding-test bash`, connect to container
+ 
 Use this code snipet as reference to implement the `after-30-days` script.
 
 ```js
