@@ -85,7 +85,9 @@ for (let i = 1; i <= 30; i += 1) {
 - `npm run after-30-days`, display an output similar to `products_after_30_days.txt`
 - `npm run view-coverage`, run the http server with the coverage report generated on browser window
 - `docker-compose up --build`, run container
-- `docker exec -ti interview-coding-test bash`, connect to container
+- Navigate to `http://127.0.0.1:8080` on your web browser
+- `docker-compose ps`, list containers
+- `docker exec -ti CONTAINER_NAME bash`, connect to container
  
 Use this code snipet as reference to implement the `after-30-days` script.
 
